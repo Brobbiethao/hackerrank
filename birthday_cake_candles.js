@@ -20,18 +20,24 @@ function readLine() {
 
 /////////////// ignore above this line ////////////////////
 
-function main() {
-    arr = readLine().split(' ');
-    arr = arr.map(Number);
-    arr = arr.sort();
-    var total= 0;
-    var i = 0;
-    var len = arr.length-1;
-    while(i < arr.length) {
-        total+=arr[i]
-        i++;
+function birthdayCakeCandles(n, ar) {
+    // Complete this function
+    ar = ar.sort();
+    var max = Math.max(... ar)
+    var count = 0;
+    for(var i=0;i<ar.length;i++){
+      if(ar[i] === max) {
+        count++;
+      }
     }
-    var min = total-arr[len];
-    var max = total-arr[len]
-    console.log(min+" "+max)
+    return count;
+}
+
+function main() {
+    var n = parseInt(readLine());
+    ar = readLine().split(' ');
+    ar = ar.map(Number);
+    var result = birthdayCakeCandles(n, ar);
+    process.stdout.write("" + result + "\n");
+
 }
